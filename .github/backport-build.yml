@@ -94,7 +94,7 @@ jobs:
           find . -name "*.app" -maxdepth 6 -exec cp -R {} out/ \; 2>/dev/null || true
           cp app-build.log out/ 2>/dev/null || true
           ls -la out
-          ditto -c -k --keepParent out monterey-test.zip
+          zip -r -X monterey-test.zip out
 
       - uses: actions/upload-artifact@v4
         if: always()
